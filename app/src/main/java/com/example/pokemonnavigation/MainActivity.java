@@ -1,8 +1,10 @@
 package com.example.pokemonnavigation;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -12,11 +14,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+
+import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,13 +40,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public NavController navController;
     public NavigationView navigationView;
 
+    adapterPokemon adapter;
+    ArrayList<Post> postArray;
+    ListView lst;
+    CardView cardView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setupNavigation();
+
+
+
     }
+
 
 
 
@@ -90,12 +106,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (id){
 
             case R.id.first:
-                navController.navigate(R.id.);
+                navController.navigate(R.id.firstFragment);
+
                 break;
+          //  startService(new Intent(MainActivity.this, firstFragment.class));
 
         }
 
 
         return true;
     }
+
+
+
+
 }

@@ -3,17 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".defaultFragment">
+    tools:context=".testFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/defaultFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
         android:gravity="center"
-        android:text="Welcome to Pokemon Application"
-
-        android:textSize="24sp" />"
-
+        android:id="@+id/defaultFragment"
+        android:text="test Fragment"
+        android:textSize="20sp" />
 </LinearLayout>

@@ -9,6 +9,22 @@
     <fragment
         android:id="@+id/defaultFragment"
         android:name="com.example.pokemonnavigation.defaultFragment"
-        android:label="fragment_default"
+        android:label="Main menu"
         tools:layout="@layout/fragment_default" />
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.pokemonnavigation.firstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" />
+    <fragment
+        android:id="@+id/testFragment2"
+        android:name="com.example.pokemonnavigation.testFragment"
+        android:label="fragment_test2"
+        tools:layout="@layout/fragment_test2" />
+    <fragment
+        android:id="@+id/pkemondesc"
+        android:name="com.example.pokemonnavigation.Pkemondesc"
+        android:label="fragment_pkemondesc"
+        tools:layout="@layout/fragment_pkemondesc" />
+
 </navigation>

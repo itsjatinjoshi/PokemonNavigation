@@ -11,6 +11,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +31,7 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.jar.Attributes;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,8 +46,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class firstFragment extends Fragment {
     adapterPokemon adapter;
     ArrayList<Post> postArray;
-    ListView lst;
-    CardView cardView;
+
 
 
     public NavController navController;
@@ -126,13 +127,25 @@ public class firstFragment extends Fragment {
 
             RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
             int position = viewHolder.getAdapterPosition();
-            //Toast.makeText(getActivity().getApplicationContext(), postArray.get(position).getName(), Toast.LENGTH_LONG).show();
-
-
             Bundle bundle = new Bundle();
-            bundle.putParcelable("Pokemon",postArray.get(position));
+
+            bundle.putParcelable("name",postArray.get(position));
+            TextView txt_name = (TextView) getView().findViewById(R.id.txt_name);
+
+            
+
+            Navigation.findNavController(view).navigate(R.id.pkemondesc, bundle);
+
+//            Intent i = new Intent(this, Pkemondesc.class);
+//            i.putExtra("Value1", "This value one for ActivityTwo ");
+//            i.putExtra("Value2", "This value two ActivityTwo");
+//
+//            startActivity(i);
+
+
         }
     };
+
 
 }
 

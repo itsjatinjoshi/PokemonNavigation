@@ -9,4 +9,8 @@ public interface JsonPlaceHolderApi {
 
     @GET("Vy2abloQD")
     Call<List<Post>> getPosts();
+
+  //  @GET("E14trR2lD")
+  //  Call<PokemonPojo> getPokemonObj();
+
 }

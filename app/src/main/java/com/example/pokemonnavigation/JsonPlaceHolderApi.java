@@ -8,9 +8,12 @@ import retrofit2.http.GET;
 public interface JsonPlaceHolderApi {
 
     @GET("Vy2abloQD")
-    Call<List<Post>> getPosts();
+   Call<List<Post>> getPosts();
 
-  //  @GET("E14trR2lD")
-  //  Call<PokemonPojo> getPokemonObj();
+//    @GET("Nyn89X3HP")
+//    Call<List<Post>> getPosts();
+
+//    @GET("E14trR2lD")
+//    Call<PokemonPojo> getPokemonObj();
 
 }

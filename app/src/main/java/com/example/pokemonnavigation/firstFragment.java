@@ -8,11 +8,16 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.NavDirections;
+import androidx.navigation.NavHost;
 import androidx.navigation.Navigation;
+import androidx.navigation.Navigator;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,6 +33,7 @@ import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,9 +54,6 @@ public class firstFragment extends Fragment {
     ArrayList<Post> postArray;
 
 
-
-    public NavController navController;
-    public NavigationView navigationView;
 
     public firstFragment() {
         // Required empty public constructor
@@ -74,6 +77,7 @@ public class firstFragment extends Fragment {
 
         Retrofit retrofit = new retrofit2.Retrofit.Builder()
                 .baseUrl("https://next.json-generator.com/api/json/get/")
+                // baseUrl("https://next.json-generator.com/api/json/get/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -103,6 +107,14 @@ public class firstFragment extends Fragment {
                 Toast.makeText(getActivity().getApplicationContext(), "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
+
+//        String pokeName = getArguments().getString("name");
+//        String pokeImage  =getArguments().getString("image");
+//        String pokeType = getArguments().getString("type");
+//        String pokeAbility = getArguments().getString("ability");
+//        String pokeHeight = getArguments().getString("height");
+//        String pokeWeight= getArguments().getString("weight");
+//        String pokeDescription = getArguments().getString("description");
     }
 
 
@@ -119,7 +131,10 @@ public class firstFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(onItemClickPoke);
 
+
     }
+
+
 
     public View.OnClickListener onItemClickPoke = new View.OnClickListener() {
         @Override
@@ -128,22 +143,12 @@ public class firstFragment extends Fragment {
             RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
             int position = viewHolder.getAdapterPosition();
             Bundle bundle = new Bundle();
-
             bundle.putParcelable("name",postArray.get(position));
-            TextView txt_name = (TextView) getView().findViewById(R.id.txt_name);
-
-            
-
             Navigation.findNavController(view).navigate(R.id.pkemondesc, bundle);
-
-//            Intent i = new Intent(this, Pkemondesc.class);
-//            i.putExtra("Value1", "This value one for ActivityTwo ");
-//            i.putExtra("Value2", "This value two ActivityTwo");
-//
-//            startActivity(i);
 
 
         }
+
     };
 
 

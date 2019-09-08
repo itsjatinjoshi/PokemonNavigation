@@ -27,6 +27,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class defaultFragment extends Fragment {
 
+    private String name;
+
 
 
     public void onAttach(@NonNull Context context) {
@@ -42,4 +44,9 @@ public class defaultFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_default, container, false);
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+    }
 }

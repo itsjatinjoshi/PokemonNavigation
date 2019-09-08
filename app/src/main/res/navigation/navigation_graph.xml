@@ -21,12 +21,22 @@
         android:id="@+id/pkemondesc"
         android:name="com.example.pokemonnavigation.Pkemondesc"
         android:label="fragment_pkemondesc"
-        tools:layout="@layout/fragment_pkemondesc" />
+        tools:layout="@layout/fragment_pkemondesc" >
+
+    </fragment>
 
     <fragment
         android:id="@+id/testFragment2"
         android:name="com.example.pokemonnavigation.testFragment"
         android:label="fragment_test2"
-        tools:layout="@layout/fragment_test2" />
+        tools:layout="@layout/fragment_test2">
+
+
+
+    </fragment>
+
+
+
+
 
 </navigation>

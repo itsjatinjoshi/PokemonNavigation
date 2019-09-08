@@ -53,16 +53,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setupNavigation();
 
 
-
     }
-
-
-
 
 
     public void setupNavigation() {
         toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -96,28 +93,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         menuItem.setCheckable(true);
         drawerLayout.closeDrawers();
 
         int id = menuItem.getItemId();
-        switch (id){
+        switch (id) {
 
             case R.id.first:
                 navController.navigate(R.id.firstFragment);
 
                 break;
-          //  startService(new Intent(MainActivity.this, firstFragment.class));
+            //  startService(new Intent(MainActivity.this, firstFragment.class));
 
         }
 
 
         return true;
     }
-
-
 
 
 }
